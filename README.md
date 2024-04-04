@@ -7,4 +7,5 @@
 
 ## Print da tela de login
 
+![Imagem tela de splash](tela-splash.png)
 ![Imagem tela de login](print-tela.png)
