@@ -1,22 +1,23 @@
 import { StyleSheet } from "react-native";
+import { fonts } from "../../theme/fonts";
 
 const styles = StyleSheet.create({
     container:{
         width: '100%',
-        marginTop: '15%',
-        paddingStart: '10%',
+        marginTop: '20%',
+        paddingLeft: 24
         
     },
     logo:{
-        width: 64,
-        height: 64,
+        width: 44,
+        height: 44,
     },
     h1:{
         color: '#fff',
         marginTop: '5%',
         fontSize: 32,
         fontWeight: 'bold',
-        fontFamily: 'Raley_700Bold'
+        fontFamily: fonts.type.ralewayBold
     },
     text:{
         color: '#fff',

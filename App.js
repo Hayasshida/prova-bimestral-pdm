@@ -1,21 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
 import FormContainer from './src/components/FormContainer';
 import Welcome from './src/components/Welcome';
+import { useFonts, Raleway_100Thin, Raleway_700Bold, Raleway_600SemiBold, Raleway_500Medium } from "@expo-google-fonts/raleway";
 
 export default function App() {
 
+
+  const [fonteLoaded] = useFonts({
+    Raleway_100Thin,
+    Raleway_500Medium,
+    Raleway_600SemiBold,
+    Raleway_700Bold
+})
+
+if(!fonteLoaded){
+    return null // TODO: colocar o loading
+}
+
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <StatusBar style="light" />
+
       <ImageBackground
         source={require('./src/components/img/bgwelcome.png')}
         style={styles.bgImage}
       >
-        <Welcome></Welcome>
+        <Welcome />
       </ImageBackground>
-      <FormContainer></FormContainer>
-      <StatusBar style="auto" />
-    </View>
+  
+      <FormContainer />
+  
+    </KeyboardAvoidingView>
   );
 }
 

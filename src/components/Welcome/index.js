@@ -1,19 +1,11 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
 import styles from "./styles";
-import { useFonts, Raleway_100Thin, Raleway_700Bold } from "@expo-google-fonts/raleway";
 import { StyleSheet } from "react-native";
+import { fonts } from "../../theme/fonts";
 
 export default function Welcome(){
-    const [fonteLoaded] = useFonts({
-        Raleway_100Thin,
-        Raleway_700Bold
-    })
     
-    if(!fonteLoaded){
-        return null
-    }
-
     return(
         <View style={styles.container}>
                 <Image
@@ -28,14 +20,15 @@ export default function Welcome(){
 
 const styleText = StyleSheet.create({
     h1:{
-        fontFamily: 'Raleway_700Bold',
-        fontSize: 32,
+        fontFamily: fonts.type.ralewaySemibold,
+        fontSize: 28,
         color: '#fff',
-        marginTop: '5%',
+        marginTop: 24,
     },
     text:{
         color: '#fff',
         fontSize: 20,
-        fontFamily: 'Raleway_700Bold'
+        fontFamily: fonts.type.ralewayMedium,
+        marginTop: 10
     }
 })

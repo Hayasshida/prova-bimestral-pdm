@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         height: '55%',
         backgroundColor: '#fff',
         flex: 1,
-        padding: '10%',
+        padding: 24,
     },
 })
 
